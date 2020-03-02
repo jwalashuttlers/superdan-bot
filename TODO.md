@@ -1,8 +1,7 @@
 ## Bot Commands
 
-`/add` => Adds the money to a pool account. Checks if the user is in `ADMIN_GROUPS`. Gives 403 otherwise.
-
-`/book <int>` => Confirms the booking of <n> courts. Deducts the amount from each user's wallet _equally_ for the court booking. 
+`/payin` => Adds the money to a pool account. Checks if the user is in `ADMIN_GROUPS`. Gives 403 otherwise.
+`/deduct amount: <float> description: <string>` => Amount to be deducted. For ex. book court, shuttlecock expense etc.
 
 ### Scheduled commands
 
