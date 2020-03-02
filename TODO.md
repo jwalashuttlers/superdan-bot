@@ -13,4 +13,8 @@ booking is manual. Once done `/book` is invoked.
 
 ## Tasks
 
-- [ ] Telegram Bot API token
+- [x] Telegram Bot API token
+- [ ] Basic framework for bot using [telebot](https://github.com/tucnak/telebot)
+- [ ] Write methods for bot commands
+- [ ] Use `gocron` for scheduled commands
+- [ ] Config parsing
