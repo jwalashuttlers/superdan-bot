@@ -1,7 +1,7 @@
 ## Bot Commands
 
-`/payin` => Adds the money to a pool account. Checks if the user is in `ADMIN_GROUPS`. Gives 403 otherwise.
-`/deduct amount: <float> description: <string>` => Amount to be deducted. For ex. book court, shuttlecock expense etc.
+- `/payin` => Adds the money to a pool account. Checks if the user is in `ADMIN_GROUPS`. Gives 403 otherwise.
+- `/deduct amount: <float> description: <string>` => Amount to be deducted. For ex. book court, shuttlecock expense etc.
 
 ### Scheduled commands
 
