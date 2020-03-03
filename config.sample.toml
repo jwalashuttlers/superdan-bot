@@ -1,0 +1,8 @@
+[telegram]
+api_key = ""
+
+[splitwise]
+consumer_key = ""
+consumer_secret = ""
+token = ""
+token_secret = ""

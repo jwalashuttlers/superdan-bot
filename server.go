@@ -1,14 +1,18 @@
 package main
 
 import (
+	"fmt"
+	"log"
 	"time"
 
+	"github.com/jwalashuttle/superdan-bot/splitwise"
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 
 // Server represents the superdan-bot server
 type Server struct {
-	bot *tb.Bot
+	bot      *tb.Bot
+	spClient *splitwise.Client
 }
 
 // NewServer returns a new server
@@ -23,8 +27,23 @@ func NewServer() (*Server, error) {
 		return nil, err
 	}
 
+	spClient, _ := splitwise.NewClient(splitwise.Opts{
+		ConsumerKey:    cfg.Splitwise.ConsumerKey,
+		ConsumerSecret: cfg.Splitwise.ConsumerSecret,
+	})
+
+	spClient.SetAccessTokens(cfg.Splitwise.Token, cfg.Splitwise.TokenSecret)
+
+	user, err := spClient.GetCurrentUser()
+	if err != nil {
+		return nil, fmt.Errorf("error while getting user: %v", err)
+	}
+
+	log.Printf("current splitwise user: %s", user.Email)
+
 	srv := &Server{
-		bot: b,
+		bot:      b,
+		spClient: spClient,
 	}
 
 	return srv, nil
